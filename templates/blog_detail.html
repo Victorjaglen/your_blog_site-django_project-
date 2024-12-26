@@ -1,0 +1,24 @@
+{% extends 'layout.html'%}
+
+{% block title %}
+    {{ blog.title }}
+{% endblock %}
+
+{% block content %}
+    <main>
+        <article class="post-detail">
+            <h1 class="title">{{ blog.title }} </h1>
+            <img class="img"src='{{ blog.image.url }}' alt="{{ blog.title }}"/>
+            <a class="edit_blog" href="{% url 'edit_blog' blog.id %}">Edit Blog</a>
+            <p class="content">{{ blog.content }} <p>
+            <p class="date">Published on {{ blog.date }} by {{ blog.author }}</p>
+        </article>
+        <div class="button-container">
+        <a class="back" href="/">Back to Home</a>
+        <form method="POST" action="{% url 'delete_blog' blog.id %}">
+            {% csrf_token %}
+            <button type="submit" class="delete_blog">Delete Blog</button>
+        </form>
+    </div>
+    </main>
+{% endblock %}

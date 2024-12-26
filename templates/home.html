@@ -1,0 +1,17 @@
+{% extends 'layout.html'%}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Your Site</h1>
+
+    <p>Welcome to Your Blog site, your personal space to share your thoughts, experiences, and insights. Whether it's a reflection on life, a deep dive into a particular subject, or a daily journal, Your Blog Site is the perfect platform for you to express yourself.
+    With an easy-to-use interface, you can write, edit, and update your blogs effortlessly. Connect with a community of like-minded individuals who appreciate storytelling and exploration. Share your journey, learn from others, and grow together.</p>
+
+    <div class="home_blogs_buttonn">
+        <button> <a href="{% url 'blogs_list'%}">Check out your Blogs here..</a></button>
+    </div>
+
+{% endblock %}
