@@ -18,7 +18,7 @@ This is a simple blog website where users can create, view, and manage blog post
    git clone [https://github.com/Victorjaglen/your_blog_site-django_project-.git]
 
 2. Navigate to the root directory:
-    cd <repository_name>
+    cd blog_website
 
 3. Install Dependencies:
     pip install -r requirements.txt
