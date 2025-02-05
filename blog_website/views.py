@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def homepage(request):
-    return render(request, 'home.html')
-
+    if request.user.is_authenticated:
+        return render(request, 'home.html')
+    return redirect('login_register')
+    # return render(request, 'home.html')

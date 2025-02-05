@@ -16,6 +16,7 @@
 <body>
     <header>
         <nav class="navbar">
+        {% if user.is_authenticated %}
             <div class="container">
                 <a href="/" class="logo">My Site</a>
                 <ul class="nav-links">
@@ -23,6 +24,12 @@
                     <li><a href="/blogs">Blogs</a></li>
                     <li><a href="{% url 'add_blog' %}">Add Blog</a></li>
                 </ul>
+        {% else %}
+            <ul class="nav-links">
+                <li><a href="{% url 'login_page'%}">Login</a></li>
+                <li><a href="{% url 'register_page'%}">Register</a></li>
+            </ul>
+        {% endif %}    
         </nav>
     </header>
     <main>
