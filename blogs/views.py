@@ -54,13 +54,12 @@ class BlogMixinView(mixins.ListModelMixin,
             data = response.data
             context = {'blogs': data}
             return render(request, 'blogs_list.html', context)
-        except Blog.DoesNotExist:
-            messages.error(request, 'Blog not found.')
-            return redirect('blogs_list')
+
         except Exception as e:
             print(e)
             messages.error(request, 'An unexpected error occurred.')
-            return render(request, 'blogs_list.html')
+            return render(request, 'blogs_list.html', {'error_message': 'Blog not found, try again'})
+            # return render(request, 'blogs_list.html')
 
     # Handle POST requests for creating or updating a blog
     def post(self, request, *args, **kwargs):
